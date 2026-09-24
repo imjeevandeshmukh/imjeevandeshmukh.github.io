@@ -123,6 +123,13 @@
       transition: background .18s ease-out;
     }
     .hero .wrap { position: relative; z-index: 1; }
+    .hero-top { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .avatar { position: relative; width: 116px; height: 116px; flex-shrink: 0; border-radius: 50%; padding: 3px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 12%, transparent), var(--shadow); }
+    .avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; background: var(--surface); }
+    .avatar .ring { position: absolute; inset: -9px; border: 1px dashed var(--line-2); border-radius: 50%; animation: spin 26s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce){ .avatar .ring { animation: none; } }
+    @media (max-width: 520px){ .avatar { width: 92px; height: 92px; } }
     .hero .avail { display: inline-flex; align-items: center; gap: 10px; font-family: var(--f-mono); font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line-2); padding: 7px 14px; border-radius: 40px; }
     .hero .avail .live { width: 7px; height: 7px; border-radius: 50%; background: #47d16a; box-shadow: 0 0 0 0 rgba(71,209,106,.6); animation: live 2.4s infinite; }
     @keyframes live { 0%{ box-shadow:0 0 0 0 rgba(71,209,106,.55);} 70%{ box-shadow:0 0 0 9px transparent;} 100%{ box-shadow:0 0 0 0 transparent;} }
@@ -250,7 +257,10 @@
   <header class="hero" id="top">
     <div class="spot" id="spot" aria-hidden="true"></div>
     <div class="wrap">
-      <span class="avail"><span class="live"></span> Available for senior Android roles</span>
+      <div class="hero-top">
+        <div class="avatar"><span class="ring" aria-hidden="true"></span><img src="assets/headshot.png" alt="Jeevan Deshmukh" width="116" height="116" /></div>
+        <span class="avail"><span class="live"></span> Available for senior Android roles</span>
+      </div>
       <h1 class="title">Production Android, from payment rails to <em>living-room robots.</em></h1>
       <p class="lede">
         I'm <b>Jeevan Deshmukh</b> — a Senior Android Engineer with <b>8+ years</b> in Kotlin &amp; Java.
