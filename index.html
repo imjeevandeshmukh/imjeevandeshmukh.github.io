@@ -194,6 +194,29 @@
     .skill:hover .tags span { border-color: var(--line-2); }
     @media (max-width: 640px){ .skills { grid-template-columns: 1fr; } .skill { border-right: none; } }
 
+    /* ---------- PROJECTS ---------- */
+    .projects { display: flex; flex-direction: column; gap: 22px; }
+    .project { display: grid; grid-template-columns: 1fr 1.05fr; gap: 40px; align-items: center; border: 1px solid var(--line); border-radius: 10px; padding: 34px; background: var(--surface); overflow: hidden; }
+    .project:nth-child(even) .p-info { order: 2; }
+    .p-eyebrow { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-family: var(--f-mono); font-size: .76rem; color: var(--faint); }
+    .p-eyebrow .co { color: var(--accent-tx); font-weight: 500; }
+    .p-eyebrow .tag { border: 1px solid var(--line-2); border-radius: 2px; padding: 3px 8px; color: var(--muted); }
+    .p-info h3 { font-family: var(--f-display); font-weight: 700; font-size: clamp(1.4rem, 2.6vw, 1.9rem); letter-spacing: -.01em; margin: 14px 0 0; line-height: 1.06; text-wrap: balance; }
+    .p-block { margin-top: 16px; }
+    .p-block .lab { font-family: var(--f-mono); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-tx); }
+    .p-block p { color: var(--muted); margin: 5px 0 0; }
+    .p-block p b { color: var(--text); font-weight: 600; }
+    .p-tech { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 20px; }
+    .p-tech span { font-family: var(--f-mono); font-size: .74rem; color: var(--faint); border: 1px solid var(--line); padding: 4px 9px; border-radius: 2px; }
+    .p-media { min-width: 0; }
+    .shots { display: flex; gap: 14px; overflow-x: auto; padding: 4px 2px 14px; scroll-snap-type: x mandatory; }
+    .shots img { height: 400px; width: auto; border-radius: 18px; border: 1px solid var(--line-2); box-shadow: var(--shadow); background: var(--surface); flex: 0 0 auto; scroll-snap-align: start; }
+    .shots::-webkit-scrollbar { height: 8px; }
+    .shots::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 20px; }
+    .shots::-webkit-scrollbar-track { background: transparent; }
+    .p-hint { font-family: var(--f-mono); font-size: .72rem; color: var(--faint); margin-top: 2px; }
+    @media (max-width: 820px){ .project { grid-template-columns: 1fr; gap: 24px; padding: 26px; } .project:nth-child(even) .p-info { order: 0; } .shots img { height: 330px; } }
+
     /* ---------- EXPERIENCE ---------- */
     .xp { display: flex; flex-direction: column; }
     .job { display: grid; grid-template-columns: 168px 1fr; gap: 30px; padding: 34px 0; border-top: 1px solid var(--line); position: relative; transition: .25s; }
@@ -246,6 +269,7 @@
       <a class="brand" href="#top"><span class="sq"></span> <b>jeevan</b><span>.deshmukh</span></a>
       <div class="nav-r">
         <a class="link" href="#work">/ work</a>
+        <a class="link" href="#projects">/ projects</a>
         <a class="link" href="#skills">/ skills</a>
         <a class="link" href="#experience">/ experience</a>
         <a class="link" href="#contact">/ contact</a>
@@ -345,10 +369,89 @@
       </div>
     </section>
 
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="head rv">
+        <span class="idx">04</span>
+        <div><h2>Featured projects</h2><p>A few products I've helped ship — the problem, and what I built. (Screenshots are public app-store listings.)</p></div>
+      </div>
+      <div class="projects">
+
+        <article class="project rv">
+          <div class="p-info">
+            <div class="p-eyebrow"><span class="co">PayPal</span><span>2024 — Now</span><span class="tag">Payments</span></div>
+            <h3>Consumer payments at global scale</h3>
+            <div class="p-block"><span class="lab">The problem</span><p>Evolve consumer payment features inside one of the world's largest payments apps — where reliability, correctness, and performance are non-negotiable and the codebase is massive.</p></div>
+            <div class="p-block"><span class="lab">What I built</span><p>Production Android features in <b>Kotlin</b> with Jetpack components and modern architecture — shipping <b>Jetpack Compose</b> UI, orchestrating reliable background work with WorkManager &amp; Job Scheduler, and building reactive flows with Coroutines &amp; Flow against existing components and REST APIs.</p></div>
+            <div class="p-tech"><span>Kotlin</span><span>Compose</span><span>Coroutines</span><span>Flow</span><span>WorkManager</span><span>REST</span></div>
+          </div>
+          <div class="p-media">
+            <div class="shots">
+              <img src="assets/projects/paypal-1.jpg" alt="PayPal Pay Later card and active plans screen" loading="lazy" />
+              <img src="assets/projects/paypal-2.jpg" alt="PayPal — pay later at top stores screen" loading="lazy" />
+            </div>
+            <div class="p-hint">← swipe · PayPal (Google Play listing)</div>
+          </div>
+        </article>
+
+        <article class="project rv">
+          <div class="p-info">
+            <div class="p-eyebrow"><span class="co">Miko</span><span>2022 — 2024</span><span class="tag">Robotics</span></div>
+            <h3>Bringing a companion robot to life</h3>
+            <div class="p-block"><span class="lab">The problem</span><p>Miko's companion robot for kids needed a polished, safe, parent-facing Android app that talks to the robot in real time, serves rich learning content, and keeps families engaged.</p></div>
+            <div class="p-block"><span class="lab">What I built</span><p>Led Android development in <b>Kotlin/MVVM</b> — <b>AIDL</b>-based IPC to coordinate with the robot's services, responsive <b>Jetpack Compose</b> UIs, and background/async pipelines with WorkManager, Coroutines, Flow &amp; RxJava. Integrated Maps, Camera, Location and REST APIs, and shipped Flutter builds for reach.</p></div>
+            <div class="p-tech"><span>Kotlin</span><span>MVVM</span><span>AIDL</span><span>Compose</span><span>RxJava</span><span>Flutter</span></div>
+          </div>
+          <div class="p-media">
+            <div class="shots">
+              <img src="assets/projects/miko-1.jpg" alt="Miko app — explore award-winning content" loading="lazy" />
+              <img src="assets/projects/miko-2.jpg" alt="Miko app — Storybook, when your child becomes an author" loading="lazy" />
+            </div>
+            <div class="p-hint">← swipe · Miko (Google Play listing)</div>
+          </div>
+        </article>
+
+        <article class="project rv">
+          <div class="p-info">
+            <div class="p-eyebrow"><span class="co">Jukshio → for Reliance Jio</span><span>2019 — 2020</span><span class="tag">KYC · On-device ML</span></div>
+            <h3>On-device digital KYC, built as an SDK</h3>
+            <div class="p-block"><span class="lab">The problem</span><p>Onboard telecom customers in minutes with a compliant, on-device digital KYC flow — verifying documents and faces reliably across a huge range of Android phones.</p></div>
+            <div class="p-block"><span class="lab">What I built</span><p>An internal Android <b>SDK</b> that streamlined cellular onboarding &amp; KYC automation — integrating <b>TensorFlow</b> models with Camera/Camera2/<b>CameraX</b> for on-device image processing, bridging native code via <b>JNI</b>, and wiring networking with Retrofit/OkHttp. Shipped in JioPOS Plus, with CircleCI CI.</p></div>
+            <div class="p-tech"><span>Kotlin</span><span>Java</span><span>TensorFlow</span><span>CameraX</span><span>JNI</span><span>Retrofit</span><span>CircleCI</span></div>
+          </div>
+          <div class="p-media">
+            <div class="shots">
+              <img src="assets/projects/kyc-1.jpg" alt="JioPOS Plus — digital KYC process screen" loading="lazy" />
+              <img src="assets/projects/kyc-2.jpg" alt="JioPOS Plus — welcome / login screen" loading="lazy" />
+            </div>
+            <div class="p-hint">← swipe · JioPOS Plus (Google Play listing)</div>
+          </div>
+        </article>
+
+        <article class="project rv">
+          <div class="p-info">
+            <div class="p-eyebrow"><span class="co">Zobaze</span><span>2020</span><span class="tag">Retail · POS</span></div>
+            <h3>A point-of-sale that fits in a pocket</h3>
+            <div class="p-block"><span class="lab">The problem</span><p>Small merchants needed a fast, offline-friendly point-of-sale and online shopfront on Android — scan or search items, bill in seconds, and print or share receipts.</p></div>
+            <div class="p-block"><span class="lab">What I built</span><p>The Android <b>POS</b> and online shopfront in <b>Kotlin/MVVM</b> — optimized Gradle builds, a <b>multi-module</b> architecture, and legacy code refactored to MVVM. Integrated Location, Wi-Fi, GPS, Camera, and <b>Bluetooth</b> receipt printing, plus a Flutter build.</p></div>
+            <div class="p-tech"><span>Kotlin</span><span>MVVM</span><span>Multi-Module</span><span>Flutter</span><span>Bluetooth</span><span>UI Automator</span></div>
+          </div>
+          <div class="p-media">
+            <div class="shots">
+              <img src="assets/projects/zobaze-1.jpg" alt="Zobaze POS — print or share receipts" loading="lazy" />
+              <img src="assets/projects/zobaze-2.jpg" alt="Zobaze POS — scan or search items to sell fast" loading="lazy" />
+            </div>
+            <div class="p-hint">← swipe · Zobaze POS (Google Play listing)</div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
     <!-- EXPERIENCE -->
     <section id="experience">
       <div class="head rv">
-        <span class="idx">04</span>
+        <span class="idx">05</span>
         <div><h2>Experience</h2><p>Selected roles across payments, robotics, IoT, and retail.</p></div>
       </div>
       <div class="xp">
@@ -443,7 +546,7 @@
     <!-- EDUCATION -->
     <section id="education">
       <div class="head rv">
-        <span class="idx">05</span>
+        <span class="idx">06</span>
         <div><h2>Education</h2></div>
       </div>
       <div class="edu rv">
