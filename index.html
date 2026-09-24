@@ -208,6 +208,10 @@
     .p-block p b { color: var(--text); font-weight: 600; }
     .p-tech { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 20px; }
     .p-tech span { font-family: var(--f-mono); font-size: .74rem; color: var(--faint); border: 1px solid var(--line); padding: 4px 9px; border-radius: 2px; }
+    .p-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; font-family: var(--f-mono); font-size: .82rem; color: var(--accent-tx); border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color .2s; }
+    .p-link:hover { border-color: var(--accent); }
+    .p-link .ext { transition: transform .2s; }
+    .p-link:hover .ext { transform: translate(2px,-2px); }
     .p-media { min-width: 0; }
     .shots { display: flex; gap: 14px; overflow-x: auto; padding: 4px 2px 14px; scroll-snap-type: x mandatory; }
     .shots img { height: 400px; width: auto; border-radius: 18px; border: 1px solid var(--line-2); box-shadow: var(--shadow); background: var(--surface); flex: 0 0 auto; scroll-snap-align: start; }
@@ -384,6 +388,7 @@
             <div class="p-block"><span class="lab">The problem</span><p>Evolve consumer payment features inside one of the world's largest payments apps — where reliability, correctness, and performance are non-negotiable and the codebase is massive.</p></div>
             <div class="p-block"><span class="lab">What I built</span><p>Production Android features in <b>Kotlin</b> with Jetpack components and modern architecture — shipping <b>Jetpack Compose</b> UI, orchestrating reliable background work with WorkManager &amp; Job Scheduler, and building reactive flows with Coroutines &amp; Flow against existing components and REST APIs.</p></div>
             <div class="p-tech"><span>Kotlin</span><span>Compose</span><span>Coroutines</span><span>Flow</span><span>WorkManager</span><span>REST</span></div>
+            <a class="p-link" href="https://play.google.com/store/apps/details?id=com.paypal.android.p2pmobile" target="_blank" rel="noopener">View on Google Play <span class="ext">↗</span></a>
           </div>
           <div class="p-media">
             <div class="shots">
@@ -404,6 +409,7 @@
             <div class="p-block"><span class="lab">The problem</span><p>Miko's companion robot for kids needed a polished, safe, parent-facing Android app that talks to the robot in real time, serves rich learning content, and keeps families engaged.</p></div>
             <div class="p-block"><span class="lab">What I built</span><p>Led Android development in <b>Kotlin/MVVM</b> — <b>AIDL</b>-based IPC to coordinate with the robot's services, responsive <b>Jetpack Compose</b> UIs, and background/async pipelines with WorkManager, Coroutines, Flow &amp; RxJava. Integrated Maps, Camera, Location and REST APIs, and shipped Flutter builds for reach.</p></div>
             <div class="p-tech"><span>Kotlin</span><span>MVVM</span><span>AIDL</span><span>Compose</span><span>RxJava</span><span>Flutter</span></div>
+            <a class="p-link" href="https://play.google.com/store/apps/details?id=com.miko3.app" target="_blank" rel="noopener">View on Google Play <span class="ext">↗</span></a>
           </div>
           <div class="p-media">
             <div class="shots">
@@ -423,6 +429,7 @@
             <div class="p-block"><span class="lab">The problem</span><p>Onboard telecom customers in minutes with a compliant, on-device digital KYC flow — verifying documents and faces reliably across a huge range of Android phones.</p></div>
             <div class="p-block"><span class="lab">What I built</span><p>An internal Android <b>SDK</b> that streamlined cellular onboarding &amp; KYC automation — integrating <b>TensorFlow</b> models with Camera/Camera2/<b>CameraX</b> for on-device image processing, bridging native code via <b>JNI</b>, and wiring networking with Retrofit/OkHttp. Shipped in JioPOS Plus, with CircleCI CI.</p></div>
             <div class="p-tech"><span>Kotlin</span><span>Java</span><span>TensorFlow</span><span>CameraX</span><span>JNI</span><span>Retrofit</span><span>CircleCI</span></div>
+            <a class="p-link" href="https://play.google.com/store/apps/details?id=com.jio.jpp1" target="_blank" rel="noopener">View JioPOS Plus on Google Play <span class="ext">↗</span></a>
           </div>
           <div class="p-media">
             <div class="shots">
@@ -443,6 +450,7 @@
             <div class="p-block"><span class="lab">The problem</span><p>Small merchants needed a fast, offline-friendly point-of-sale and online shopfront on Android — scan or search items, bill in seconds, and print or share receipts.</p></div>
             <div class="p-block"><span class="lab">What I built</span><p>The Android <b>POS</b> and online shopfront in <b>Kotlin/MVVM</b> — optimized Gradle builds, a <b>multi-module</b> architecture, and legacy code refactored to MVVM. Integrated Location, Wi-Fi, GPS, Camera, and <b>Bluetooth</b> receipt printing, plus a Flutter build.</p></div>
             <div class="p-tech"><span>Kotlin</span><span>MVVM</span><span>Multi-Module</span><span>Flutter</span><span>Bluetooth</span><span>UI Automator</span></div>
+            <a class="p-link" href="https://play.google.com/store/apps/details?id=com.zobaze.pos" target="_blank" rel="noopener">View on Google Play <span class="ext">↗</span></a>
           </div>
           <div class="p-media">
             <div class="shots">
@@ -461,6 +469,7 @@
             <div class="p-block"><span class="lab">The problem</span><p>Bring prayer, Quran, duas, community chat, giving, and a marketplace into one accessible Android app — easy enough for everyone in the family to use.</p></div>
             <div class="p-block"><span class="lab">What I built</span><p>Shopping- and accessibility-focused Android in <b>Kotlin/MVVM</b> with Jetpack Architecture Components — a <b>multi-module</b> architecture with Room, LiveData, ViewModel &amp; Paging, REST &amp; <b>GraphQL</b>, and Location services for nearby-agent discovery and communication workflows.</p></div>
             <div class="p-tech"><span>Kotlin</span><span>MVVM</span><span>Multi-Module</span><span>Room</span><span>GraphQL</span><span>Espresso</span></div>
+            <a class="p-link" href="https://play.google.com/store/apps/details?id=com.sila" target="_blank" rel="noopener">View Sila on Google Play <span class="ext">↗</span></a>
           </div>
           <div class="p-media">
             <div class="shots">
@@ -478,6 +487,7 @@
             <div class="p-block"><span class="lab">The problem</span><p>Give citizens and city teams a way to track bins, waste pickups, and green workers across localities — and nudge better waste-segregation habits.</p></div>
             <div class="p-block"><span class="lab">What I built</span><p>IoT-based Android apps in <b>Java/MVP</b> — integrated the <b>Firebase</b> suite (Realtime DB, Auth, Storage, Remote Config, Crashlytics, Cloud Functions), geofencing &amp; Google Maps, and <b>Bluetooth/Wi-Fi sensors</b> talking to IoT devices, with SQLite persistence.</p></div>
             <div class="p-tech"><span>Java</span><span>MVP</span><span>Firebase</span><span>Google Maps</span><span>Bluetooth/Wi-Fi</span><span>SQLite</span></div>
+            <a class="p-link" href="https://antariksh.io/" target="_blank" rel="noopener">Visit antariksh.io <span class="ext">↗</span></a>
           </div>
           <div class="p-media">
             <div class="shots">
