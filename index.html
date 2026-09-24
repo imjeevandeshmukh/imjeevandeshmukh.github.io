@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeevan Deshmukh — Senior Android Engineer</title>
+  <meta name="description" content="Jeevan Deshmukh — Senior Android Engineer with 8+ years building Android apps in Kotlin & Java for payments, robotics, IoT, and KYC. Portfolio, experience, and resume." />
+  <meta name="author" content="Jeevan Deshmukh" />
+  <meta property="og:title" content="Jeevan Deshmukh — Senior Android Engineer" />
+  <meta property="og:description" content="8+ years building Android apps in Kotlin & Java for payments, robotics, IoT, and KYC." />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://imjeevandeshmukh.github.io/" />
+  <meta name="theme-color" content="#0b6e4f" />
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg-2: #131b24;
+      --surface: #161e28;
+      --surface-2: #1c2733;
+      --ink: #e9eef4;
+      --muted: #9aa7b4;
+      --faint: #6b7885;
+      --line: #24303c;
+      --accent: #3ddc84;      /* android green */
+      --accent-2: #2bb6c9;    /* teal */
+      --accent-ink: #052015;
+      --grad: linear-gradient(120deg, #3ddc84 0%, #2bb6c9 100%);
+      --shadow: 0 10px 40px rgba(0,0,0,.35);
+      --chip: #1e2a36;
+      --chip-ink: #cdd8e3;
+    }
+    :root[data-theme="light"] {
+      --bg: #f6f8fb;
+      --bg-2: #eef2f7;
+      --surface: #ffffff;
+      --surface-2: #f2f6fa;
+      --ink: #16202b;
+      --muted: #566472;
+      --faint: #8996a3;
+      --line: #e2e8ef;
+      --accent: #0b9d5f;
+      --accent-2: #1191a5;
+      --accent-ink: #ffffff;
+      --grad: linear-gradient(120deg, #0b9d5f 0%, #1191a5 100%);
+      --shadow: 0 10px 40px rgba(20,40,70,.10);
+      --chip: #eef3f8;
+      --chip-ink: #35434f;
+    }
+    @media (prefers-color-scheme: light) {
+      :root:not([data-theme]) {
+        --bg: #f6f8fb; --bg-2: #eef2f7; --surface: #ffffff; --surface-2: #f2f6fa;
+        --ink: #16202b; --muted: #566472; --faint: #8996a3; --line: #e2e8ef;
+        --accent: #0b9d5f; --accent-2: #1191a5; --accent-ink: #ffffff;
+        --grad: linear-gradient(120deg, #0b9d5f 0%, #1191a5 100%);
+        --shadow: 0 10px 40px rgba(20,40,70,.10); --chip: #eef3f8; --chip-ink: #35434f;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6; font-size: 16px; overflow-x: hidden;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(160%) blur(12px);
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-in { display: flex; align-items: center; justify-content: space-between; height: 62px; }
+    .logo { font-weight: 800; letter-spacing: .3px; font-size: 1.05rem; display: flex; align-items: center; gap: 9px; }
+    .logo .dot { width: 11px; height: 11px; border-radius: 50%; background: var(--grad); box-shadow: 0 0 12px var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 26px; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: .93rem; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: var(--ink); }
+    .theme-btn {
+      background: var(--surface-2); border: 1px solid var(--line); color: var(--ink);
+      width: 38px; height: 34px; border-radius: 9px; cursor: pointer; font-size: 1rem; line-height: 1;
+    }
+    .theme-btn:hover { border-color: var(--accent); }
+    @media (max-width: 720px){ .nav-links a:not(.btn){ display:none; } }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+      padding: 11px 20px; border-radius: 10px; font-weight: 600; font-size: .92rem;
+      border: 1px solid var(--line); background: var(--surface-2); color: var(--ink);
+      transition: transform .15s, border-color .2s, background .2s;
+    }
+    .btn:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .btn.primary { background: var(--grad); color: var(--accent-ink); border: none; }
+    .btn.primary:hover { filter: brightness(1.06); }
+
+    /* HERO */
+    header.hero { position: relative; padding: 92px 0 70px; overflow: hidden; }
+    header.hero::before {
+      content:""; position:absolute; inset:0; z-index:0;
+      background:
+        radial-gradient(560px 340px at 78% -8%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%),
+        radial-gradient(520px 320px at 8% 12%, color-mix(in srgb, var(--accent-2) 18%, transparent), transparent 70%);
+      pointer-events:none;
+    }
+    .hero .wrap { position: relative; z-index: 1; }
+    .eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:.82rem; font-weight:600; letter-spacing:.6px; text-transform:uppercase; color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); padding:6px 13px; border-radius:20px; }
+    .eyebrow .pulse { width:8px; height:8px; border-radius:50%; background: var(--accent); box-shadow:0 0 0 0 var(--accent); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 70%,transparent);} 70%{box-shadow:0 0 0 10px transparent;} 100%{box-shadow:0 0 0 0 transparent;} }
+    h1 { font-size: clamp(2.3rem, 6vw, 4rem); line-height: 1.05; margin: 20px 0 0; letter-spacing: -1px; font-weight: 800; }
+    .grad-text { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .role { font-size: clamp(1.15rem, 3vw, 1.6rem); color: var(--muted); font-weight: 600; margin-top: 12px; }
+    .lede { max-width: 640px; color: var(--muted); font-size: 1.06rem; margin-top: 20px; }
+    .cta { display:flex; flex-wrap:wrap; gap: 12px; margin-top: 30px; }
+    .meta-row { display:flex; flex-wrap:wrap; gap:18px; margin-top:26px; color:var(--faint); font-size:.9rem; }
+    .meta-row span { display:inline-flex; align-items:center; gap:7px; }
+
+    /* STATS */
+    .stats { display:grid; grid-template-columns: repeat(4, 1fr); gap:16px; margin-top: 54px; }
+    .stat { background: var(--surface); border:1px solid var(--line); border-radius:14px; padding:22px 18px; text-align:center; }
+    .stat .num { font-size: 1.9rem; font-weight: 800; background: var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .stat .lbl { color: var(--muted); font-size:.82rem; margin-top:4px; }
+    @media (max-width: 640px){ .stats{ grid-template-columns: repeat(2,1fr);} }
+
+    /* SECTIONS */
+    section { padding: 64px 0; }
+    .sec-head { margin-bottom: 34px; }
+    .sec-head .kicker { color: var(--accent); font-weight:700; font-size:.82rem; letter-spacing:1.4px; text-transform:uppercase; }
+    .sec-head h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin: 8px 0 0; letter-spacing:-.5px; }
+    .sec-head p { color: var(--muted); margin: 10px 0 0; max-width: 620px; }
+
+    .about-grid { display:grid; grid-template-columns: 1fr; gap: 16px; }
+    .about-card { background: var(--surface); border:1px solid var(--line); border-radius:14px; padding: 22px 24px; color: var(--muted); }
+    .about-card strong { color: var(--ink); }
+
+    /* SKILLS */
+    .skill-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:16px; }
+    .skill-card { background: var(--surface); border:1px solid var(--line); border-radius:14px; padding:20px 22px; transition: transform .2s, border-color .2s; }
+    .skill-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+    .skill-card h3 { margin:0 0 12px; font-size: 1rem; display:flex; align-items:center; gap:9px; }
+    .skill-card h3 .ic { width:30px; height:30px; border-radius:8px; background: color-mix(in srgb, var(--accent) 16%, transparent); display:grid; place-items:center; font-size:1rem; }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; }
+    .chip { background: var(--chip); color: var(--chip-ink); padding:5px 12px; border-radius:20px; font-size:.83rem; border:1px solid transparent; }
+
+    /* TIMELINE */
+    .timeline { position: relative; margin-left: 6px; }
+    .timeline::before { content:""; position:absolute; left: 7px; top: 6px; bottom: 6px; width: 2px; background: var(--line); }
+    .tl-item { position: relative; padding: 0 0 30px 38px; }
+    .tl-item::before { content:""; position:absolute; left: 0; top: 5px; width: 16px; height: 16px; border-radius:50%; background: var(--bg); border: 3px solid var(--accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent); }
+    .tl-top { display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 16px; align-items:baseline; }
+    .tl-role { font-weight: 700; font-size: 1.08rem; }
+    .tl-co { color: var(--accent); font-weight:600; }
+    .tl-date { color: var(--faint); font-size:.86rem; white-space:nowrap; }
+    .tl-place { color: var(--muted); font-size:.86rem; margin-top:2px; }
+    .tl-body { color: var(--muted); margin: 10px 0 0; padding-left: 18px; }
+    .tl-body li { margin-bottom: 6px; }
+    .tl-env { margin-top:12px; }
+    .tl-env .chip { font-size:.78rem; }
+
+    /* EDUCATION + CONTACT */
+    .edu-card { background: var(--surface); border:1px solid var(--line); border-radius:14px; padding: 24px; display:flex; align-items:center; gap:18px; }
+    .edu-card .ic { width:52px; height:52px; border-radius:12px; background: var(--grad); display:grid; place-items:center; font-size:1.5rem; flex-shrink:0; }
+    .edu-card h3 { margin:0; font-size:1.05rem; }
+    .edu-card p { margin:4px 0 0; color: var(--muted); font-size:.92rem; }
+
+    .contact { text-align:center; background: var(--surface); border:1px solid var(--line); border-radius:20px; padding: 50px 30px; margin-top: 10px; }
+    .contact h2 { font-size: clamp(1.6rem,4vw,2.3rem); margin:0; }
+    .contact p { color: var(--muted); max-width: 520px; margin: 14px auto 0; }
+    .contact .cta { justify-content:center; margin-top: 28px; }
+
+    footer { border-top:1px solid var(--line); padding: 30px 0; color: var(--faint); font-size:.85rem; }
+    .foot-in { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; align-items:center; }
+    .foot-links { display:flex; gap:18px; }
+    .foot-links a { text-decoration:none; color: var(--muted); }
+    .foot-links a:hover { color: var(--accent); }
+
+    /* reveal on scroll */
+    .reveal { opacity:0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in { opacity:1; transform:none; }
+    @media (prefers-reduced-motion: reduce){ .reveal{opacity:1;transform:none;} html{scroll-behavior:auto;} .eyebrow .pulse{animation:none;} }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="wrap nav-in">
+      <div class="logo"><span class="dot"></span> Jeevan Deshmukh</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle light/dark theme">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow"><span class="pulse"></span> Available for opportunities</span>
+      <h1>Building great<br /><span class="grad-text">Android experiences.</span></h1>
+      <div class="role">Senior Android Engineer</div>
+      <p class="lede">
+        8+ years designing, building, and shipping production Android apps in Kotlin &amp; Java —
+        across global payments, consumer robotics, IoT, retail POS, and KYC. Currently building at scale
+        for <strong>PayPal</strong>.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#contact">Get in touch</a>
+        <a class="btn" href="https://imjeevandeshmukh.github.io/resume/" target="_blank" rel="noopener">📄 View résumé</a>
+        <a class="btn" href="https://linkedin.com/in/imjeevandeshmukh" target="_blank" rel="noopener">in LinkedIn</a>
+        <a class="btn" href="https://github.com/imjeevandeshmukh" target="_blank" rel="noopener">⌥ GitHub</a>
+      </div>
+      <div class="meta-row">
+        <span>📍 San Jose, CA</span>
+        <span>✉️ <a href="mailto:jeevanvilasdeshmukh@gmail.com" style="color:inherit">jeevanvilasdeshmukh@gmail.com</a></span>
+        <span>📱 (469) 340-3560</span>
+      </div>
+
+      <div class="stats">
+        <div class="stat reveal"><div class="num">8+</div><div class="lbl">Years experience</div></div>
+        <div class="stat reveal"><div class="num">6</div><div class="lbl">Companies shipped for</div></div>
+        <div class="stat reveal"><div class="num">5+</div><div class="lbl">Domains delivered</div></div>
+        <div class="stat reveal"><div class="num">2</div><div class="lbl">Languages: Kotlin & Java</div></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="sec-head reveal">
+        <div class="kicker">About</div>
+        <h2>Senior Android engineer who ships</h2>
+        <p>I turn complex requirements into reliable, maintainable Android apps — from architecture and modularization to background processing, native integrations, and testing.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card reveal">
+          Senior Android Engineer with <strong>8+ years</strong> designing, developing, testing, and delivering
+          Android applications for smartphones, tablets, enterprise, client-server, IoT, robotics, payments, and KYC solutions.
+          Expert in <strong>Kotlin</strong> and <strong>Java</strong> with deep, hands-on experience in the Android SDK,
+          Jetpack Compose, MVVM/MVP/MVC, Clean Architecture, Kotlin Coroutines &amp; Flow, RxJava, WorkManager, AIDL/Binder,
+          and multi-module development.
+        </div>
+        <div class="about-card reveal">
+          Strong background in REST &amp; GraphQL integration, Retrofit/OkHttp, Firebase, Room/SQLite, Google Maps &amp; Location,
+          Camera/CameraX/Camera2, Bluetooth, Wi-Fi, sensors, TensorFlow, JNI/NDK, OAuth, and payment gateways.
+          Experienced with <strong>unit &amp; UI testing</strong> (JUnit, Mockito, Espresso, Robolectric, Appium, UI Automator)
+          and <strong>CI/CD</strong> via Jenkins &amp; CircleCI. A collaborative engineer focused on legacy modernization,
+          performance, and secure, scalable delivery.
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="sec-head reveal">
+        <div class="kicker">Toolkit</div>
+        <h2>Technical skills</h2>
+        <p>The stack I use to design and ship production Android software.</p>
+      </div>
+      <div class="skill-grid">
+        <div class="skill-card reveal">
+          <h3><span class="ic">💻</span> Languages</h3>
+          <div class="chips"><span class="chip">Kotlin</span><span class="chip">Java 8</span><span class="chip">C</span><span class="chip">C++</span><span class="chip">Python</span><span class="chip">Go</span><span class="chip">Dart</span></div>
+        </div>
+        <div class="skill-card reveal">
+          <h3><span class="ic">🤖</span> Android</h3>
+          <div class="chips"><span class="chip">Android SDK</span><span class="chip">Jetpack Compose</span><span class="chip">Jetpack</span><span class="chip">Services</span><span class="chip">Broadcast Receivers</span><span class="chip">Content Providers</span><span class="chip">Telephony API</span><span class="chip">Notifications</span></div>
+        </div>
+        <div class="skill-card reveal">
+          <h3><span class="ic">🏛️</span> Architecture</h3>
+          <div class="chips"><span class="chip">MVVM</span><span class="chip">MVP</span><span class="chip">MVC</span><span class="chip">Clean Architecture</span><span class="chip">Multi-Module</span><span class="chip">Legacy modernization</span></div>
+        </div>
+        <div class="skill-card reveal">
+          <h3><span class="ic">⚡</span> Async &amp; Concurrency</h3>
+          <div class="chips"><span class="chip">Coroutines</span><span class="chip">Kotlin Flow</span><span class="chip">RxJava</span><span class="chip">WorkManager</span><span class="chip">Job Scheduler</span><span class="chip">Multithreading</span></div>
+        </div>
+        <div class="skill-card reveal">
+          <h3><span class="ic">🌐</span> Networking</h3>
+          <div class="chips"><span class="chip">Retrofit</span><span class="chip">OkHttp</span><span class="chip">REST</span><span class="chip">GraphQL</span><span class="chip">Volley</span><span class="chip">OAuth</span><span class="chip">JSON/XML</span></div>
+        </div>
+        <div class="skill-card reveal">
+          <h3><span class="ic">🗄️</span> Data</h3>
+          <div class="chips"><span class="chip">Room</span><span class="chip">SQLite</span><span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span><span class="chip">Firebase</span></div>
+        </div>
+        <div class="skill-card reveal">
+          <h3><span class="ic">🧪</span> Testing</h3>
+          <div class="chips"><span class="chip">JUnit</span><span class="chip">Mockito</span><span class="chip">Espresso</span><span class="chip">Robolectric</span><span class="chip">Appium</span><span class="chip">UI Automator</span><span class="chip">TDD</span></div>
+        </div>
+        <div class="skill-card reveal">
+          <h3><span class="ic">🔧</span> Build &amp; Tools</h3>
+          <div class="chips"><span class="chip">Gradle</span><span class="chip">Jenkins</span><span class="chip">CircleCI</span><span class="chip">Git</span><span class="chip">Android Studio</span><span class="chip">IntelliJ</span><span class="chip">Logcat/DDMS</span></div>
+        </div>
+        <div class="skill-card reveal">
+          <h3><span class="ic">🛰️</span> Platform &amp; Native</h3>
+          <div class="chips"><span class="chip">CameraX/Camera2</span><span class="chip">Google Maps</span><span class="chip">Location</span><span class="chip">Bluetooth/Wi-Fi</span><span class="chip">Sensors</span><span class="chip">TensorFlow</span><span class="chip">JNI/NDK</span><span class="chip">AIDL/Binder</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="sec-head reveal">
+        <div class="kicker">Career</div>
+        <h2>Professional experience</h2>
+        <p>Selected highlights from 8+ years shipping Android across payments, robotics, IoT, and retail.</p>
+      </div>
+      <div class="timeline">
+
+        <div class="tl-item reveal">
+          <div class="tl-top">
+            <div><span class="tl-role">Android Engineer III</span> · <span class="tl-co">PayPal</span> <span style="color:var(--faint)">(Contract)</span></div>
+            <div class="tl-date">Jun 2024 – Present</div>
+          </div>
+          <div class="tl-place">San Jose, CA · Global Payments</div>
+          <ul class="tl-body">
+            <li>Develop Android features with Kotlin, Jetpack components, and modern architecture in a large-scale global payments environment.</li>
+            <li>Orchestrate reliable background processing with WorkManager and Job Scheduler; build reactive flows with Coroutines &amp; Flow.</li>
+            <li>Ship production UI and custom components in Jetpack Compose, integrating with existing app components and REST APIs.</li>
+          </ul>
+          <div class="tl-env chips"><span class="chip">Kotlin</span><span class="chip">Jetpack Compose</span><span class="chip">Coroutines</span><span class="chip">Flow</span><span class="chip">WorkManager</span><span class="chip">REST</span></div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-top">
+            <div><span class="tl-role">Senior Android Engineer</span> · <span class="tl-co">Miko</span></div>
+            <div class="tl-date">Jul 2022 – May 2024</div>
+          </div>
+          <div class="tl-place">Mumbai · Consumer Robotics</div>
+          <ul class="tl-body">
+            <li>Led Android development for the <strong>Miko toy robot</strong> using Kotlin, Android SDK, and MVVM.</li>
+            <li>Implemented <strong>AIDL</strong>-based inter-process communication and integrated external data sources &amp; REST APIs.</li>
+            <li>Built responsive Compose UIs; used WorkManager, Coroutines, Flow, and RxJava for background &amp; async data streams.</li>
+            <li>Delivered Flutter versions of selected apps for cross-platform reach.</li>
+          </ul>
+          <div class="tl-env chips"><span class="chip">Kotlin</span><span class="chip">MVVM</span><span class="chip">AIDL</span><span class="chip">Compose</span><span class="chip">RxJava</span><span class="chip">Flutter</span></div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-top">
+            <div><span class="tl-role">Android Engineer</span> · <span class="tl-co">PurpleTalk</span></div>
+            <div class="tl-date">Nov 2020 – Jun 2022</div>
+          </div>
+          <div class="tl-place">Hyderabad · Shopping &amp; Accessibility</div>
+          <ul class="tl-body">
+            <li>Built shopping and accessibility-focused apps with Kotlin, MVVM, and Jetpack Architecture Components.</li>
+            <li>Designed a <strong>multi-module architecture</strong> for maintainability and scale; used Room, LiveData, ViewModel, Paging.</li>
+            <li>Integrated Google AR with camera processing; implemented REST &amp; GraphQL and Location-based agent workflows.</li>
+          </ul>
+          <div class="tl-env chips"><span class="chip">Kotlin</span><span class="chip">Multi-Module</span><span class="chip">Room</span><span class="chip">GraphQL</span><span class="chip">Google AR</span><span class="chip">Espresso</span></div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-top">
+            <div><span class="tl-role">Mobile Engineer</span> · <span class="tl-co">Zobaze</span></div>
+            <div class="tl-date">Feb 2020 – Oct 2020</div>
+          </div>
+          <div class="tl-place">Hyderabad · Retail / POS</div>
+          <ul class="tl-body">
+            <li>Built an Android <strong>Point of Sale (POS)</strong> and online shopfront app in Kotlin with MVVM.</li>
+            <li>Optimized Gradle builds, established multi-module architecture, and refactored legacy code to MVVM.</li>
+            <li>Integrated Location, Accelerometer, Wi-Fi, GPS, Camera, and Bluetooth APIs; shipped a Flutter version.</li>
+          </ul>
+          <div class="tl-env chips"><span class="chip">Kotlin</span><span class="chip">MVVM</span><span class="chip">Compose</span><span class="chip">Flutter</span><span class="chip">Bluetooth/Wi-Fi</span><span class="chip">UI Automator</span></div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-top">
+            <div><span class="tl-role">Android Developer</span> · <span class="tl-co">Jukshio</span></div>
+            <div class="tl-date">Mar 2019 – Jan 2020</div>
+          </div>
+          <div class="tl-place">Hyderabad · KYC / Onboarding</div>
+          <ul class="tl-body">
+            <li>Built an internal Android <strong>SDK for Reliance</strong> to streamline cellular onboarding &amp; KYC automation.</li>
+            <li>Integrated TensorFlow models with Camera/Camera2/CameraX for image processing; implemented JNI native bridges.</li>
+            <li>Set up CircleCI CI workflows for automated testing and deployment.</li>
+          </ul>
+          <div class="tl-env chips"><span class="chip">Kotlin</span><span class="chip">Java</span><span class="chip">TensorFlow</span><span class="chip">CameraX</span><span class="chip">JNI</span><span class="chip">CircleCI</span></div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-top">
+            <div><span class="tl-role">Android Developer</span> · <span class="tl-co">Antariksh Waste Ventures</span></div>
+            <div class="tl-date">Sep 2017 – Mar 2019</div>
+          </div>
+          <div class="tl-place">Hyderabad · IoT</div>
+          <ul class="tl-body">
+            <li>Built <strong>IoT-based</strong> Android apps for waste management &amp; tracking with Java, Android SDK, and MVP.</li>
+            <li>Integrated the Firebase suite (Realtime DB, Auth, Storage, Remote Config, Crashlytics, Cloud Functions).</li>
+            <li>Implemented geofencing &amp; Google Maps; connected Bluetooth/Wi-Fi sensors to IoT devices.</li>
+          </ul>
+          <div class="tl-env chips"><span class="chip">Java</span><span class="chip">MVP</span><span class="chip">Firebase</span><span class="chip">SQLite</span><span class="chip">Google Maps</span><span class="chip">Bluetooth/Wi-Fi</span></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="sec-head reveal">
+        <div class="kicker">Education</div>
+        <h2>Academic background</h2>
+      </div>
+      <div class="edu-card reveal">
+        <div class="ic">🎓</div>
+        <div>
+          <h3>Bachelor of Technology (B.Tech.), Electronics &amp; Communications Engineering</h3>
+          <p>Graduated 2017</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="contact reveal">
+        <h2>Let's build something great</h2>
+        <p>Open to Senior Android Engineer roles and interesting mobile challenges. The fastest way to reach me is email or LinkedIn.</p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:jeevanvilasdeshmukh@gmail.com">✉️ Email me</a>
+          <a class="btn" href="https://linkedin.com/in/imjeevandeshmukh" target="_blank" rel="noopener">in LinkedIn</a>
+          <a class="btn" href="https://imjeevandeshmukh.github.io/resume/" target="_blank" rel="noopener">📄 Résumé</a>
+          <a class="btn" href="Jeevan_Deshmukh_Resume.pdf" download>⬇ Download PDF</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="wrap foot-in">
+      <div>© <span id="yr"></span> Jeevan Deshmukh · Senior Android Engineer</div>
+      <div class="foot-links">
+        <a href="mailto:jeevanvilasdeshmukh@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/imjeevandeshmukh" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/imjeevandeshmukh" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle (respects system default, persists choice)
+    (function(){
+      var root = document.documentElement, btn = document.getElementById('themeToggle');
+      var saved = localStorage.getItem('theme');
+      if (saved) root.setAttribute('data-theme', saved);
+      function sync(){
+        var dark = (root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light')) === 'dark';
+        btn.textContent = dark ? '☀️' : '🌙';
+      }
+      sync();
+      btn.addEventListener('click', function(){
+        var cur = root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light');
+        var next = cur === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next); localStorage.setItem('theme', next); sync();
+      });
+    })();
+    // Reveal on scroll
+    (function(){
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in');}); return; }
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+      }, { threshold: 0.12 });
+      els.forEach(function(e){ io.observe(e); });
+    })();
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
